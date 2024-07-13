@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#about-the-project">About The Project</a> •
   <a href="#getting-started">Getting Started</a> •
-  <a href="#usage">Usage</a> •
+  <!-- <a href="#usage">Usage</a> • -->
   <a href="#roadmap">Roadmap</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#contact">Contact</a> •
