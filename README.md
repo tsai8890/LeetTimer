@@ -26,8 +26,7 @@
 
 ### Key Features
 
-* Auto Timer
-  - Automatically turn on the timer on Leetcode once you begin coding.
+* Auto Timer: Automatically turn on the timer on Leetcode once you begin coding.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
