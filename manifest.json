@@ -2,13 +2,17 @@
     "manifest_version": 3,
     "name": "LeetCode Autotimer",
     "version": "0.0.1",
+    "description": "A Chrome extension that automatically starts the timer on LeetCode when you begin coding.",
+    "icons": {
+        "128": "assets/icon_128x128.png"
+    },    
     "action": {
         "default_popup": "popup/index.html"
     },
     "content_scripts": [
         {
             "matches": ["https://leetcode.com/problems/*/"],
-            "js": ["global_scripts/detect_key.js"]
+            "js": ["global_scripts/auto_timer.js"]
         }
       ]
 }
