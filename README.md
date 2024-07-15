@@ -35,8 +35,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-All you need to do is install this extension through this [link]().
-It will work automatically without any manual intervention.
+All you need to do is install this extension through this [link](https://chromewebstore.google.com/detail/leettimer/aajimcbkjcmilaekamgkimbdmgahdhbn). <br> It will work automatically without any manual intervention.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
