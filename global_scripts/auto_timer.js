@@ -26,7 +26,6 @@ window.onload = () => {
 
 
 document.addEventListener('keypress', async (e) => {
-    console.log('good');
     if (timer_started !== null) {
         try {
             show_timer_button.click();
