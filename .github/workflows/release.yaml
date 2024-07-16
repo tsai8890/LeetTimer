@@ -19,13 +19,13 @@ jobs:
         cd ../
         zip -r LeetTimer.zip LeetTimer
         ls -lah
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 20
-    - name: Build
-      run: |
-        npm ci
-        npm run build
+    # - uses: actions/setup-node@v1
+    #   with:
+    #     node-version: 20
+    # - name: Build
+    #   run: |
+    #     npm ci
+    #     npm run build
     - name: Upload & release
       uses: mnao305/chrome-extension-upload@v5.0.0
       with:
