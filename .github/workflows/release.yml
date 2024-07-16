@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    name: Publish Web Extension
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: |
+        echo The PR was merged
+    - uses: actions/checkout@v1
+    - run: |
+        cd ../
+        zip -r LeetTimer.zip LeetTimer
+        ls -lah
+    # - uses: actions/setup-node@v1
+    #   with:
+    #     node-version: 20
+    # - name: Build
+    #   run: |
+    #     npm ci
+    #     npm run build
+    # - name: Upload & release
+    #   uses: mnao305/chrome-extension-upload@v5.0.0
+    #   with:
+    #     file-path: LeetTimer.zip
+    #     extension-id: hogefuga(extension id)
+    #     client-id: ${{ secrets.CLIENT_ID }}
+    #     client-secret: ${{ secrets.CLIENT_SECRET }}
+    #     refresh-token: ${{ secrets.REFRESH_TOKEN }}
