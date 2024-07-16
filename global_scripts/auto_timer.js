@@ -18,8 +18,6 @@ window.onload = () => {
         start_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(1) > div > div.flex.items-center.hover\\:bg-fill-quaternary.dark\\:hover\\:bg-fill-quaternary");
         reset_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(1) > div > div.rounded-\\[3px\\].p-2.hover\\:bg-fill-quaternary.dark\\:hover\\:bg-fill-quaternary.text-gray-60.dark\\:text-gray-60");
         show_timer_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(2) > div");
-        
-
     });
     observer.observe(document, {attributes: false, childList: true, characterData: false, subtree: true});
 }
@@ -34,16 +32,11 @@ document.addEventListener('keypress', async (e) => {
         finally {
             if (first_entry === true) {
                 first_entry = false;
+                reset_button.click();
+                setTimeout(() => {
+                    start_button.click(); 
+                }, 500);
 
-                if (timer_started === false) {
-                    start_button.click();
-                
-                } else {
-                    reset_button.click();
-                    setTimeout(() => {
-                        start_button.click(); 
-                    }, 500);
-                }
             } else if (timer_started === false) {
                 start_button.click();
             }
