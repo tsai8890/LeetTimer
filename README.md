@@ -49,6 +49,8 @@ All you need to do is install this extension through this [link](https://chromew
 
 - [x] Automatically turn on the timer when users start to type
 - [x] Detect whether the timer started or not for better user experience
+- [x] Detect URL changes to determine if the timer should be reset
+- [ ] A better UI
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
