@@ -1,11 +1,12 @@
-var timer_started = null;
-var first_entry = true;
+let timer_started = null;
+let first_entry = true;
+let prev_window_url = null;
 
 
 // Web Interface on LeetCode
-var start_button = null;
-var reset_button = null;
-var show_timer_button = null;
+let start_button = null;
+let reset_button = null;
+let show_timer_button = null;
 
 
 window.onload = () => {
@@ -18,7 +19,25 @@ window.onload = () => {
         start_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(1) > div > div.flex.items-center.hover\\:bg-fill-quaternary.dark\\:hover\\:bg-fill-quaternary");
         reset_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(1) > div > div.rounded-\\[3px\\].p-2.hover\\:bg-fill-quaternary.dark\\:hover\\:bg-fill-quaternary.text-gray-60.dark\\:text-gray-60");
         show_timer_button = document.querySelector("#ide-top-btns > div.relative.flex > div.relative.flex.overflow-hidden.rounded.bg-fill-tertiary.dark\\:bg-fill-tertiary.mr-\\[6px\\] > div > div:nth-child(2) > div");
+
+                
+        let curr_window_url = window.location.toString()
+        
+        // Enter another page
+        if (curr_window_url !== prev_window_url) {
+            first_entry = true;
+            if (timer_started) {
+                start_button.click();
+            }
+            // console.log('from: ' + prev_window_url + ' to: ' + curr_window_url);
+            prev_window_url = curr_window_url;
+        }
     });
+
+    // Initialize the current window's url
+    prev_window_url = window.location.toString();
+
+    // Add observer
     observer.observe(document, {attributes: false, childList: true, characterData: false, subtree: true});
 }
 
@@ -34,7 +53,7 @@ document.addEventListener('keypress', async (e) => {
                 first_entry = false;
                 reset_button.click();
                 setTimeout(() => {
-                    start_button.click(); 
+                    start_button.click();
                 }, 500);
 
             } else if (timer_started === false) {
